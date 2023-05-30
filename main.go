@@ -9,14 +9,14 @@ import (
 
 func main() {
 	// Konfigurasi koneksi MySQL
-	db, err := sql.Open("mysql", "username:password@tcp(localhost:3306)/database_name")
+	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/mahasiswa")
 	if err != nil {
 		panic(err.Error())
 	}
 	defer db.Close()
 
 	// Membaca data dari tabel
-	rows, err := db.Query("SELECT * FROM table_name")
+	rows, err := db.Query("SELECT * FROM person")
 	if err != nil {
 		panic(err.Error())
 	}
